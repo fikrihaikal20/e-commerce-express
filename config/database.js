@@ -1,0 +1,35 @@
+module.exports = {
+  development: {
+    username: process.env.DB_USERNAME_DEVELOPMENT_LOCAL,
+    password: process.env.DB_PASSWORD_DEVELOPMENT_LOCAL,
+    database: process.env.DB_DATABASE_DEVELOPMENT_LOCAL,
+    host: process.env.DB_HOST_DEVELOPMENT_LOCAL,
+    dialect: process.env.DB_DIALECT_DEVELOPMENT_LOCAL,
+    port: process.env.DB_PORT_DEVELOPMENT_LOCAL || 3306,
+    logging: console.log,
+  },
+  staging: {
+    username: process.env.DB_USERNAME_STAGING,
+    password: process.env.DB_PASSWORD_STAGING,
+    database: process.env.DB_DATABASE_STAGING,
+    host: process.env.DB_HOST_STAGING,
+    dialect: process.env.DB_DIALECT_STAGING,
+  },
+  test: {
+    username: process.env.DB_USERNAME_DEVELOPMENT_LOCAL,
+    password: process.env.DB_PASSWORD_DEVELOPMENT_LOCAL,
+    database: process.env.DB_DATABASE_DEVELOPMENT_LOCAL,
+    host: process.env.DB_HOST_DEVELOPMENT_LOCAL,
+    dialect: process.env.DB_DIALECT_DEVELOPMENT_LOCAL,
+    port: process.env.DB_PORT_DEVELOPMENT_LOCAL || 3306,
+    logging: console.log,
+  },
+  production: {
+    username: process.env.DB_USERNAME_PRODUCTION,
+    password: process.env.DB_PASSWORD_PRODUCTION,
+    database: process.env.DB_DATABASE_PRODUCTION,
+    host: process.env.DB_HOST_PRODUCTION,
+    dialect: process.env.DB_DIALECT_PRODUCTION,
+    port: process.env.DB_PORT_PRODUCTION || 3306,
+  },
+};
