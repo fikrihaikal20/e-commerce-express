@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "5b5ffa5f-768f-43e4-869f-8da610d4b654",
+		"name": "E-commerce express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24707420"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@gmail.com\",\r\n//   \"email\": \"fikri@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"fikri\",\r\n  \"password\": \"123456\",\r\n  \"name\": \"John Doe\",\r\n  \"contact\": \"1234567890\",\r\n  \"birth_date\": \"1990-01-01\",\r\n  \"gender\": \"male\",\r\n  \"address\": \"123 Main St, City\",\r\n  \"email\": \"fikri@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/auth/register/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"auth",
+								"register",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"john_doe\",\r\n  \"password\": \"123456\",\r\n  \"name\": \"John Doe\",\r\n  \"contact\": \"1234567890\",\r\n  \"birth_date\": \"1990-01-01\",\r\n  \"gender\": \"male\",\r\n  \"address\": \"123 Main St, City\",\r\n  \"email\": \"john@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Smartphone z\",\r\n  \"price\": 999.99,\r\n  \"description\": \"A high-quality smartphone with advanced features.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/product?name=Smartphone&per_page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Smartphone"
+								},
+								{
+									"key": "per_page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/product/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2e300e86-b132-4ed1-8fbe-c44c4613f3e9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One By name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/product/:name/nama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product",
+								":name",
+								"nama"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Smartphone y"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/product/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b6eb0ffe-a4b9-4213-9757-9a388ee3b8b1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Smartphone kali\",\r\n  \"price\": 89123.99,\r\n  \"description\": \"A high-quality smartphone with advanced features.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/product/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5db3425f-aa4a-4424-b667-caebd0b26f40"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNTBlNDdiNS0yOWM4LTRjMTYtYmYzYy02NWIwZTFiMTJlOGQiLCJpc19hZG1pbiI6ZmFsc2UsImlhdCI6MTcxNTQzNzM1MjI2NSwiZXhwIjoxNzE1NDM3NDM4NjY1fQ.7MwfckYNn9NjtEYc_rVJ-HbhC2PiBTwPB9g3SM3mcqU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"product_id\" : \"5db3425f-aa4a-4424-b667-caebd0b26f40\",\r\n  \"quantity\" : \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1376/order/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order My Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/order/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order My Order by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/order/:name/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"order",
+								":name",
+								"product"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Smartphone kali"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/order/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"order",
+								"findAll"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "e50e47b5-29c8-4c16-bf3c-65b0e1b12e8d",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNTBlNDdiNS0yOWM4LTRjMTYtYmYzYy02NWIwZTFiMTJlOGQiLCJpc19hZG1pbiI6ZmFsc2UsImlhdCI6MTcxNTQzNzM1MjI2NSwiZXhwIjoxNzE1NDM3NDM4NjY1fQ.7MwfckYNn9NjtEYc_rVJ-HbhC2PiBTwPB9g3SM3mcqU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Find All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ban User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/user/ban/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"user",
+								"ban",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e50e47b5-29c8-4c16-bf3c-65b0e1b12e8d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnBan User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1376/user/ban/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1376",
+							"path": [
+								"user",
+								"ban",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e50e47b5-29c8-4c16-bf3c-65b0e1b12e8d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNTBlNDdiNS0yOWM4LTRjMTYtYmYzYy02NWIwZTFiMTJlOGQiLCJpc19hZG1pbiI6ZmFsc2UsImlhdCI6MTcxNTQzNzM1MjI2NSwiZXhwIjoxNzE1NDM3NDM4NjY1fQ.7MwfckYNn9NjtEYc_rVJ-HbhC2PiBTwPB9g3SM3mcqU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
